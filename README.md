@@ -4,13 +4,47 @@ English word dictionary for Wordle
 A collection of five-letter English words from [kujirahand/EJDict](https://github.com/kujirahand/EJDict) for Wordle.
 
 # Hint
-Number of times a character appears in each position.
+## Number of times a character appears
 
 ```ruby
-puts File.readlines('wordle.txt', chomp: true).map(&:chars).transpose.map{ |c| c.tally.sort_by{ -_1[1] }.to_h }.to_yaml
+puts File.read('wordle.txt').delete("\n").chars.tally.sort_by{ -_2 }.to_h.to_yaml
+__END__
+
+---
+E: 1691
+A: 1490
+R: 1183
+O: 1115
+S: 1037
+I: 1019
+T: 979
+L: 951
+N: 865
+U: 677
+C: 650
+Y: 601
+D: 573
+P: 546
+H: 539
+M: 482
+G: 419
+B: 417
+K: 307
+F: 292
+W: 268
+V: 219
+X: 69
+Z: 69
+J: 57
+Q: 45
 ```
 
-```yaml
+## Number of times a character appears in each position.
+
+```ruby
+puts File.readlines('wordle.txt', chomp: true).map(&:chars).transpose.map{ |c| c.tally.sort_by{ -_2 }.to_h }.to_yaml
+__END__
+
 ---
 - S: 490
   C: 277
