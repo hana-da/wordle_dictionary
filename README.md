@@ -175,6 +175,15 @@ __END__
   Z: 5
 ```
 
+## The Best Word
+
+```ruby
+
+puts File.readlines('uniq.txt', chomp: true).grep(/#{Regexp.union(File.read('wordle.txt').delete("\n").chars.tally.sort_by{ -_2 }.to_h.keys.first(5))}{5}/)
+__END__
+AROSE
+```
+
 # License
 
 [![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png)](http://creativecommons.org/publicdomain/zero/1.0/) CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
