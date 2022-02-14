@@ -1,0 +1,6 @@
+linters:
+  LineLength:
+    max: 120
+
+  IdNames:
+    style: snake_case
