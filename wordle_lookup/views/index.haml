@@ -14,36 +14,39 @@
             %a{ href: '/' } Wordle Lookup
 
       .columns
-        .column.is-half
+        .column.is-half.px-5
           %form{ action: '/' }
-            .field.is-horizontal
-              .field-label.is-normal
-                %label.label ⬛
-              .field-body
-                .field.control
-                  %input.input{ name: 'b', value: @b.join }
+            .level.is-mobile
+              .level-left
+                .level-item
+                  %label.label.is-small ⬛
+                .level-item
+                  .field.is-grouped
+                    .control
+                      %input.input.is-small{ name: 'b', value: @b.join, size: 41 }
 
-            .field.is-horizontal
-              .field-label.is-normal
-                %label.label 🟨
-              .field-body
-                - 5.times do |n|
-                  .field.control
-                    %input.input{ name: 'y[]', value: @y[n] }
+            .level.is-mobile
+              .level-left
+                .level-item
+                  %label.label.is-small 🟨
+                .level-item
+                  .field.is-grouped
+                    - 5.times do |n|
+                      .control
+                        %input.input.is-small{ name: 'y[]', value: @y[n], size: 5 }
 
-            .field.is-horizontal
-              .field-label.is-normal
-                %label.label 🟩
-              .field-body
-                - 5.times do |n|
-                  .field.control
-                    %input.input{ name: 'g[]', value: @g[n] }
+            .level.is-mobile
+              .level-left
+                .level-item
+                  %label.label.is-small 🟩
+                .level-item
+                  .field.is-grouped
+                    - 5.times do |n|
+                      .control
+                        %input.input.is-small{ name: 'g[]', value: @g[n], size: 5 }
 
-            .field.is-horizontal
-              .field-label.is-normal
-              .field-body
-                .field.control
-                  %input.button.is-success.is-outlined.is-fullwidth{ type: :submit, value: :Lookup }
+            .field.control
+              %input.button.is-success.is-outlined.is-small.is-fullwidth{ type: :submit, value: :Lookup }
 
         .column.is-half
           %h2.title.is-2 #{@words.count} Words found.
