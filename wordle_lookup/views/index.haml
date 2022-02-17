@@ -23,7 +23,7 @@
                 .level-item
                   .field.is-grouped
                     .control
-                      %input.input.is-small{ name: 'b', value: @b.join, size: 41 }
+                      %input.input.is-small{ inputmode: :url, name: 'b', value: @b.join, size: 41 }
 
             .level.is-mobile
               .level-left
@@ -33,7 +33,7 @@
                   .field.is-grouped
                     - 5.times do |n|
                       .control
-                        %input.input.is-small{ name: 'y[]', value: @y[n], size: 5 }
+                        %input.input.is-small{ inputmode: :url, name: 'y[]', value: @y[n], size: 5 }
 
             .level.is-mobile
               .level-left
@@ -43,7 +43,7 @@
                   .field.is-grouped
                     - 5.times do |n|
                       .control
-                        %input.input.is-small{ name: 'g[]', value: @g[n], size: 5 }
+                        %input.input.is-small{ inputmode: :url, name: 'g[]', value: @g[n], size: 5 }
 
             .field.control
               %input.button.is-success.is-outlined.is-small.is-fullwidth{ type: :submit, value: :Lookup }
